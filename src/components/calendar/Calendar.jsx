@@ -42,6 +42,17 @@ const Calendar = () => {
         )
     }
 
+    const validaRangeDate = (nowDate) => {
+        const endDate = new Date(nowDate);
+        const days = 3
+        endDate.setDate(endDate.getDate() + days);
+        console.log(nowDate, endDate )
+        return {
+            start: nowDate,
+            end: endDate // sets end dynamically to 90 days after now (86400*90)
+        } //to prevent anterior dates
+    }
+
     return (
         <div className="col-lg-9">
             <div>
@@ -49,13 +60,20 @@ const Calendar = () => {
                     selectable='true'
                     firstDay={1}
                     initialView="timeGridWeek"
+                    locale='fr'
                     plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
                     header={{
                         left: "prev,next today",
                         center: "title",
                         right: 'timeGridWeek,timeGridDay'
                     }}
-
+                    // minDate={minDate}
+                    // maxDate={maxDate}
+                    // eventConstraint: {{
+                    // start:minDate,
+                    // end: maxDate
+                    // }}
+                    validRange={validaRangeDate}
                     nowIndicator
                     displayEventEnd={{
                         month: false,
