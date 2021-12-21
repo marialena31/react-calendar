@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TimekitBooking from 'timekit-booking'
-import $ from 'jquery'
 
 class TestApp extends React.Component {
     componentDidMount() {
