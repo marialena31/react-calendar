@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SideBar from './sidebar/SideBar'
-import Calendar from './calendar/Calendar'
+import Calendar2 from './calendar/Calendar2'
 
 const Main = () => {
     return (
@@ -13,7 +13,7 @@ const Main = () => {
                             <div className="card-body">
                                 <div className="row">
                                     <SideBar />
-                                    <Calendar />
+                                    <Calendar2 />
                                 </div>
                             </div>
                         </div>
